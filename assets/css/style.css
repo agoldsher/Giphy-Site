@@ -1,0 +1,32 @@
+
+
+.gif{
+    display: inline;
+    padding: 1.2em;
+    margin: 1.2em;
+}
+img{
+    height: 100px;
+}
+
+.animals{
+    margin-left:1.1em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em; 
+}
+
+button, #add-animal{
+    background-color: rgb(32, 215, 221);
+    color:white;
+}
+
+#button-form{
+    float:right;
+    margin-top:1.5em;
+    margin-bottom: 50em;
+    
+}
+
+#animal-input{
+    margin-bottom: 1em;
+}
