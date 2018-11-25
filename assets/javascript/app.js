@@ -50,11 +50,12 @@ function displayGiphy() {
             ratingDiv.append("Rating: " + response.data[0].rating);
             // imageDiv will hold the image or gif
             var imageDiv = $("<div class='gif-image' data-state='still' value = " + i + ">");
-            // this is the still image url which is added as an attribute to the imageDiv
+            // this is the still image url
             var imgURL = response.data[i].images.fixed_height_small_still.url;
-            imageDiv.attr("data-video", videoURL);
             // this is the gif url which is added as an attribute to the imageDiv
             var videoURL = response.data[i].images.fixed_height_small.url;
+            imageDiv.attr("data-video", videoURL);
+            // the still url is added to the imageDiv attribute
             imageDiv.attr("data-image", imgURL);
             // Creating an element to hold the image and the still image 
             var image = $("<img>").attr("src", imgURL);
@@ -85,6 +86,7 @@ $(document).on("click", ".gif-image", function () {
         var value = $(this).attr("value");
         // which is used to grab the id which is assicated with that image...
         imageId = ("image-" + value);
+        console.log(imageId);
         // and change the src of that image to be the gif url
         $("#" + imageId).attr("src", video);
         // lastly the data-state is changed to animated
@@ -96,6 +98,7 @@ $(document).on("click", ".gif-image", function () {
         // the proper id is found as before
         value = $(this).attr("value");
         imageId = ("image-" + value);
+        console.log(imageId);
         // the gif is replaced with the still image on the corresponding id
         $("#" + imageId).attr("src", image);
         // lastly the data-state is changed to still
